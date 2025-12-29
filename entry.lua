@@ -51,7 +51,7 @@ function on_player_input( event )
 		ddown_cat.add_item( "TRADING", 10 )
 		ddown_cat.add_item( "AGGREGATED", 11 )
 		ddown_cat.add_item( "PENALTY", 12 )
-		ddown_cat.select( 7 )
+		ddown_cat.select( 8 )
 		vbox.add_child( ddown_cat )
 
 		--- Global dialog
