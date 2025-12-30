@@ -10,7 +10,7 @@ function on_engine_load()
 	ModApiV1.sanity()
 end
 
---- @param event InputEvent
+--- @param event InputEvent|InputEventKey
 function on_player_input( event )
 	if event.get_class() == "InputEventKey" then
 		if not ( event.is_pressed() and event.get_keycode() == KEYCODE ) then return end
@@ -77,7 +77,15 @@ function on_player_input( event )
 			local category = ddown_cat.get_selected_id()
 			print( "category: " .. category )
 
-			ModApiV1.get_game_world().modify_player_cash( amount_num, details, category )
+			local world = ModApiV1.get_game_world()
+			if world == nil then
+				print( "game_world is nil" )
+				return
+			end
+
+			--- Work as intended knowing that amount_num is an integer and details a string instead of Object types
+			--- @diagnostic disable-next-line: param-type-mismatch
+			world.modify_player_cash( amount_num, details, category )
 			dialog.queue_free()
 		end)
 		dialog.connect( "canceled", function()
