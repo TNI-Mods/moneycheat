@@ -1,0 +1,21 @@
+{
+	"id": "mprx_moneycheat",
+	"name": "Money Cheat",
+	"authors": [ "mprx" ],
+	"version": "0.1.0",
+	"description": [
+		"Adds a simple UI to give yourself money.",
+		"Use F4 to open the menu."
+	],
+	"links": {
+		"github": "https://github.com/TNI-Mods/moneycheat"
+	},
+	"dependencies": {
+		// See https://devhints.io/semver for syntax.
+		"luajit-support": "^0.2.0"
+	},
+	"dependencies_optional": {
+	},
+	"incompatibilities": {
+	}
+}
